@@ -1,27 +1,38 @@
-var express = require('express')
-var aplicacion = express()
+// var express = require('express')
+// var aplicacion = express()
 
-const net = require('net')
-const server = require('http').Server(aplicacion)
-const socket = require('socket.io')(server)
-const {StringDecoder} =  require('string_decoder')
-const decoder = new StringDecoder('utf8')
+// const net = require('net')
+// const server = require('http').Server(aplicacion)
+// const socket = require('socket.io')(server)
+// const {StringDecoder} =  require('string_decoder')
+// const decoder = new StringDecoder('utf8')
 
-var HOST = "https://server1ser1.herokuapp.com"
-var PORT = 5001
+// var HOST = "https://server1ser1.herokuapp.com"
+// var PORT = 5001
 
-  server.listen(PORT, function(){
-      console.log('servidor activo ' + HOST + ':' + PORT)
-  })
+//   server.listen(PORT, function(){
+//       console.log('servidor activo ' + HOST + ':' + PORT)
+//   })
 
-var ser = net.createServer(function(so){
-    console.log('Usuario Nuevo ' + so.remoteAddress + ':' + so.remotePort)    
-    so.on('data', function(data){
-        console.log(decoder.write(data))
-    })
-    so.on('close', function(){
+// var ser = net.createServer(function(so){
+//     console.log('Usuario Nuevo ' + so.remoteAddress + ':' + so.remotePort)    
+//     so.on('data', function(data){
+//         console.log(decoder.write(data))
+//     })
+//     so.on('close', function(){
       
-    })
-})
+//     })
+// })
 
-ser.listen(PORT)
+// ser.listen(PORT)
+const express = require ('express')
+const http = require ('http')
+const WebSocket = require ('ws')
+
+const port = process.env.PORT || 8080
+const app = express ()
+const httpServer = http.createServer (aplicación)
+const wss = new WebSocket.Server ({
+    'servidor': httpServer
+})
+httpServer.listen (puerto)
