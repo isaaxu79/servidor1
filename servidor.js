@@ -25,14 +25,14 @@
 // })
 
 // ser.listen(PORT)
-const express = require ('express')
-const http = require ('http')
-const WebSocket = require ('ws')
+const express = require('express')
+const http = require('http')
+const WebSocket = require('ws')
 
 const port = process.env.PORT || 8080
-const app = express ()
-const httpServer = http.createServer (aplicación)
-const wss = new WebSocket.Server ({
-    'servidor': httpServer
+const app = express()
+const httpServer = http.createServer(app)
+const wss = new WebSocket.Server({
+    'server': httpServer
 })
-httpServer.listen (puerto)
+httpServer.listen(port)
