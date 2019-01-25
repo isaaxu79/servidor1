@@ -16,8 +16,9 @@ for(var k in interface){
     }
   }
 }
-console.log(ipDimanic + " S")
+console.log(decoder.write(ipDimanic) + " S")
 //var HOST = "192.168.137.204"
+ipDimanic = decoder.write(ipDimanic)
 var PORT = process.env.PORT || 5000;
 
   server.listen(PORT, function(){
