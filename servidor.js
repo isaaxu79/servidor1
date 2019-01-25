@@ -1,4 +1,4 @@
-// var express = require('express')
+const express = require('express')
 // var aplicacion = express()
 
 // const net = require('net')
@@ -25,7 +25,7 @@
 // })
 
 // ser.listen(PORT, HOST)
-const server = express()
+server = express()
   .use((req, res) => res.sendFile(INDEX) )
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
