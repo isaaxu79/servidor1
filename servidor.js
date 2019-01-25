@@ -7,8 +7,8 @@
 // const {StringDecoder} =  require('string_decoder')
 // const decoder = new StringDecoder('utf8')
 
-// var HOST = "https://server1ser1.herokuapp.com"
-// var PORT = 5001
+// var HOST = "https://server1ser1.herokuapp.com/"
+// var PORT = 3000
 
 //   server.listen(PORT, function(){
 //       console.log('servidor activo ' + HOST + ':' + PORT)
@@ -24,15 +24,14 @@
 //     })
 // })
 
-// ser.listen(PORT)
-const express = require('express')
-const http = require('http')
-const WebSocket = require('ws')
+// ser.listen(PORT, HOST)
+const server = express()
+  .use((req, res) => res.sendFile(INDEX) )
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-const port = process.env.PORT || 8080
-const app = express()
-const httpServer = http.createServer(app)
-const wss = new WebSocket.Server({
-    'server': httpServer
-})
-httpServer.listen(port)
+  const wss = new SocketServer({ server });
+
+  wss.on('connection', (ws) => {
+    console.log('Client connected');
+    ws.on('close', () => console.log('Client disconnected'));
+  });
