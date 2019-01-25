@@ -7,7 +7,7 @@ const socket = require('socket.io')(server)
 const {StringDecoder} =  require('string_decoder')
 const decoder = new StringDecoder('utf8')
 
-var HOST = "https://server1ser1.herokuapp.com/"
+var HOST = "127.0.0.1"
 var PORT = 3233
 
   server.listen(PORT, function(){
