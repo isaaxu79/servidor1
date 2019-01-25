@@ -1,17 +1,27 @@
 const express = require('express')
 var aplicacion = express()
-
+const os = require('os')
+var interface = os.networkInterfaces()
 const net = require('net')
 const server = require('http').Server(aplicacion)
 const socket = require('socket.io')(server)
 const {StringDecoder} =  require('string_decoder')
 const decoder = new StringDecoder('utf8')
-
-var HOST = "54.174.122.89"
+var ipDimanic;
+for(var k in interface){
+  for(var k2 in interface[k]){
+    var address = interface[k][k2]
+    if(address.family = "IPv4" && !address.internal){
+      ipDimanic = address.address.toString();
+    }
+  }
+}
+console.log(ipDimanic + " S")
+//var HOST = "192.168.137.204"
 var PORT = process.env.PORT || 5000;
 
   server.listen(PORT, function(){
-      console.log('servidor activo ' + HOST + ':' + PORT)
+      console.log('servidor activo ' + ipDimanic + ':' + PORT)
   })
 
 var ser = net.createServer(function(so){
@@ -24,4 +34,4 @@ var ser = net.createServer(function(so){
     })
 })
 
-ser.listen(PORT, HOST)
+ser.listen(PORT, ipDimanic)
