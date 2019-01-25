@@ -8,7 +8,7 @@ const {StringDecoder} =  require('string_decoder')
 const decoder = new StringDecoder('utf8')
 
 var HOST = "54.174.122.89"
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 5000;
 
   server.listen(PORT, function(){
       console.log('servidor activo ' + HOST + ':' + PORT)
