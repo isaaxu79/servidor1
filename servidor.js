@@ -12,13 +12,12 @@ for(var k in interface){
   for(var k2 in interface[k]){
     var address = interface[k][k2]
     if(address.family = "IPv4" && !address.internal){
-      ipDimanic = address.address.toString();
+      ipDimanic = address.address
     }
   }
 }
-console.log(decoder.write(ipDimanic) + " S")
+
 //var HOST = "192.168.137.204"
-ipDimanic = decoder.write(ipDimanic)
 var PORT = process.env.PORT || 5000;
 
   server.listen(PORT, function(){
