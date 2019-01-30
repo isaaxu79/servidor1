@@ -12,7 +12,7 @@ for(var k in interface){
   for(var k2 in interface[k]){
     var address = interface[k][k2]
     if(address.family = "IPv4" && !address.internal){
-      ipDimanic = address.address
+      ipDimanic = address.address.toString()
     }
   }
 }
