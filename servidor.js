@@ -21,7 +21,7 @@ var HOST = " https://server1ser1.herokuapp.com/"
 var PORT = process.env.PORT || 5000;
 
   server.listen(PORT, function(){
-      console.log('servidor activo ' + ipDimanic + ':' + PORT)
+      console.log('servidor activo ' + HOST + ':' + PORT)
   })
 
 var ser = net.createServer(function(so){
@@ -34,7 +34,7 @@ var ser = net.createServer(function(so){
     })
 })
 
-ser.listen(PORT, ipDimanic)
+ser.listen(PORT, HOST)
 // var express = require('express')
 // var app = express()
 // const net = require('net')
