@@ -17,7 +17,7 @@ for(var k in interface){
   }
 }
 
-var HOST = "https://serverisa.herokuapp.com/"
+var HOST = "127.0.0.1"
 var PORT = process.env.PORT || 5000;
 
   server.listen(PORT, function(){
